@@ -1,0 +1,55 @@
+
+$serif-font-stack: Libre Baskerville, serif
+$font-size: 16px
+$button-color: rgba(63, 191, 184, 0.10)
+$button-font-size: 2em
+$sans-serif-font-stack: Work Sans, sans-serif
+$border-color: grey
+$pitch-row-height: 200px
+
+html
+  height: 100%
+  width: 100%
+
+body
+  height: 100%
+  width: 100%
+  background-color: rgb(240, 240, 240)
+  box-sizing: border-box
+  font: 100% $serif-font-stack
+  font-size: $font-size
+  margin: 0
+
+/***************************************************
+  ELEMENT STYLES
+/***************************************************/
+
+@import buttons
+
+/***************************************************
+  MAIN CONTENT STYLES
+/***************************************************/
+
+.main
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+
+.article
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+
+
+/***************************************************
+  COMPONENT STYLES
+/***************************************************/
+
+@import header
+@import song-trainer
+@import pitch-pipe
+
+
+
