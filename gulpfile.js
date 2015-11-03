@@ -4,6 +4,9 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('browserify', function() {
   var b = browserify();
@@ -18,6 +21,23 @@ gulp.task('browserify:watch', function() {
   gulp.watch('./app/js/**/*.jsx', ['browserify']);
 });
 
+gulp.task('sass', function() {
+  return gulp.src('./app/stylesheets/**/*.sass')
+    .pipe(sass({
+      errLogToConsole: true,
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+    }))
+    .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('sass:watch', function() {
+  return gulp.watch('./**/*.sass', ['sass']);
+});
+
 gulp.task('copy', function() {
   return gulp.src('./app/**/*.html')
     .pipe(gulp.dest('./public/'));
@@ -28,7 +48,7 @@ gulp.task('copy:watch', function() {
 });
 
 gulp.task('build', ['copy', 'browserify', 'copy:watch',
-    'browserify:watch']);
+    'browserify:watch', 'sass', 'sass:watch']);
 
 gulp.task('default', ['build']);
 
