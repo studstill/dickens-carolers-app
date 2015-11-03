@@ -5,6 +5,8 @@ $button-color: rgba(63, 191, 184, 0.10)
 $button-font-size: 2em
 $sans-serif-font-stack: Work Sans, sans-serif
 $border-color: grey
+$background-color: rgb(240, 240, 240)
+$article-background-color: white;
 $pitch-row-height: 200px
 
 html
@@ -14,11 +16,12 @@ html
 body
   height: 100%
   width: 100%
-  background-color: rgb(240, 240, 240)
+  background-color: $background-color
   box-sizing: border-box
   font: 100% $serif-font-stack
   font-size: $font-size
   margin: 0
+  -webkit-tap-highlight-color: #ccc;
 
 /***************************************************
   ELEMENT STYLES
@@ -50,6 +53,6 @@ body
 @import header
 @import song-trainer
 @import pitch-pipe
-
+@import flash-cards
 
 
