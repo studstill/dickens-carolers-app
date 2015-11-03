@@ -35,6 +35,9 @@ module.exports = React.createClass({
   },
 
   render: function() {
+    $.get('/files/', function(result) {
+      console.log(result);
+    }.bind(this));
     var currentSong = '';
     var keyRevealed = false;
     return (

@@ -12,9 +12,10 @@ var Link = Router.Link;
 var songList = require('../data/song-list');
 
 // Components
-var Header = require('./components/header');
-var PitchPipe = require('./components/pitch-pipe')
-var RandomSong = require('./components/song-trainer')
+var Header = require('./components/header.jsx');
+var PitchPipe = require('./components/pitch-pipe.jsx');
+var RandomSong = require('./components/song-trainer.jsx');
+var FlashCards = require('./components/flash-cards.jsx');
 
 var App = React.createClass({
 
@@ -33,6 +34,7 @@ var routes = (
     <DefaultRoute handler={RandomSong} />
     <Route name="pitchPipe" path="/pitch-pipe" handler={PitchPipe} />
     <Route name="randomSong" path="/random-song" handler={RandomSong} />
+    <Route name="flashCards" path="/flash-cards" handler={FlashCards} />
     <NotFoundRoute handler={App} />
   </Route>
 );
