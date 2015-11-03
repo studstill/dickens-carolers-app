@@ -43,11 +43,16 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('copySounds', function() {
+  return gulp.src('./app/lib/**')
+    .pipe(gulp.dest('./public/lib'));
+});
+
 gulp.task('copy:watch', function() {
   gulp.watch('./app/**/*.html', ['copy']);
 });
 
-gulp.task('build', ['copy', 'browserify', 'copy:watch',
+gulp.task('build', ['copy', 'copySounds', 'browserify', 'copy:watch',
     'browserify:watch', 'sass', 'sass:watch']);
 
 gulp.task('default', ['build']);
