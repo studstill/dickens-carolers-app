@@ -52,8 +52,10 @@ gulp.task('copy:watch', function() {
   gulp.watch('./app/**/*.html', ['copy']);
 });
 
-gulp.task('build', ['copy', 'copySounds', 'browserify', 'copy:watch',
+gulp.task('watch', ['copy', 'copySounds', 'browserify', 'copy:watch',
     'browserify:watch', 'sass', 'sass:watch']);
+
+gulp.task('build', ['copy', 'copySounds', 'browserify', 'sass']);
 
 gulp.task('default', ['build']);
 
