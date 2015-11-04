@@ -1,10 +1,30 @@
 var React = require('react');
+var songListServices = require('../services/song-list-services');
 
 module.exports = React.createClass({
   getInitialState: function() {
     return {
+      songList: {},
+      currentSongTitle: '',
+      currentSongKey: '',
+      currentSongNumber: 0,
+      keyRevealed: false,
+      songPicked: false,
       revealed: true
     };
+  },
+
+  componentDidMount: function() {
+    songListServices.fetchSongList.call(this);
+  },
+
+  pickRandomSong: function() {
+    songListServices.pickRandomSong.call(this);
+    if (this.state.revealed) {
+      this.setState({
+        revealed: !this.state.revealed
+      });
+    }
   },
 
   rotateCard: function() {
@@ -27,17 +47,18 @@ module.exports = React.createClass({
           <div id="f1_container">
             <div id="f1_card" className="card">
               <div className="front face">
-                <p>Text Here</p>
+                <p>{this.state.currentSongTitle}</p>
               </div>
               <div className="back face center">
-                <h2>Back of the card</h2>
-                <h2>Any content can go here.</h2>
+                <h2>Number: {this.state.currentSongNumber}</h2>
+                <h2>Key: {this.state.currentSongKey}</h2>
               </div>
             </div>
           </div>
-          <button onClick={this.rotateCard}>Click here to reveal</button>
+          <button onClick={this.pickRandomSong}>New Song</button>
+          <button onClick={this.rotateCard}>Pitch & Number</button>
         </div>
       </div>
-    )
+    );
   }
-})
+});

@@ -19,6 +19,10 @@ module.exports = React.createClass({
 
   pickRandomSong: function() {
     songListServices.pickRandomSong.call(this);
+    this.setState({
+      // Hide key/pitch when a new song is generated
+      keyRevealed: false,
+    });
   },
 
   handleRevealKey: function() {

@@ -13,15 +13,18 @@ module.exports = {
   },
 
   pickRandomSong: function() {
-    var songList = this.state.songList;
+    if (this.state.songList) {
+      var songList = this.state.songList;
+    } else {
+      module.exports.fetchSongList.call(this);
+    }
     var numberOfSongs = Object.keys(songList).length;
     var randomSongNumber = Math.floor(Math.random() * numberOfSongs);
     var randomSong = songList[randomSongNumber];
     this.setState({
       currentSongTitle: randomSong.title,
       currentSongKey: randomSong.key,
-      // Hide Key
-      keyRevealed: false,
+      currentSongNumber: randomSongNumber,
       songPicked: true
     });
   }
