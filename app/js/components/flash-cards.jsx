@@ -1,5 +1,4 @@
 var React = require('react');
-var songList = require('../../data/song-list');
 
 module.exports = React.createClass({
   getInitialState: function() {

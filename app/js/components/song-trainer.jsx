@@ -1,11 +1,11 @@
 var React = require('react');
-var songList = require('../../data/song-list');
+var songListServices = require('../services/song-list-services');
 
 // random-song
 module.exports = React.createClass({
   getInitialState: function() {
     return {
-      songList: songList,
+      songList: {},
       currentSongTitle: 'Click the button for a song request!',
       currentSongKey: '',
       keyRevealed: false,
@@ -13,19 +13,12 @@ module.exports = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    songListServices.fetchSongList.call(this);
+  },
+
   pickRandomSong: function() {
-    var songList = this.state.songList;
-    var numberOfSongs = Object.keys(songList).length;
-    var randomSongNumber = Math.floor(Math.random() * numberOfSongs);
-    var randomSong = songList[randomSongNumber];
-    // var currentSong = this.state.songList[3].title;
-    this.setState({
-      currentSongTitle: randomSong.title,
-      currentSongKey: randomSong.key,
-      // Hide Key
-      keyRevealed: false,
-      songPicked: true
-    });
+    songListServices.pickRandomSong.call(this);
   },
 
   handleRevealKey: function() {
@@ -35,9 +28,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    $.get('/files/', function(result) {
-      console.log(result);
-    }.bind(this));
     var currentSong = '';
     var keyRevealed = false;
     return (

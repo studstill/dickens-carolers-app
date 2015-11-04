@@ -8,9 +8,6 @@ var DefaultRoute = Router.DefaultRoute;
 var NotFoundRoute = Router.NotFoundRoute;
 var Link = Router.Link;
 
-// Data
-var songList = require('../data/song-list');
-
 // Components
 var Header = require('./components/header.jsx');
 var PitchPipe = require('./components/pitch-pipe.jsx');
