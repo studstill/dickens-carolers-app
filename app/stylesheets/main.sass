@@ -1,9 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700|Roboto:100|Raleway:100|Work+Sans:100|Libre+Baskerville:400,700);
 
 $serif-font-stack: Libre Baskerville, serif
 $font-size: 24px
 $button-color: rgba(63, 191, 184, 0.10)
 $button-font-size: 2em
-$sans-serif-font-stack: Work Sans, sans-serif
+$sans-serif-font-stack: Arimo, sans-serif
 $border-color: grey
 $background-color: rgb(240, 240, 240)
 $article-background-color: white;
@@ -22,6 +23,9 @@ body
   font-size: $font-size
   margin: 0
   -webkit-tap-highlight-color: #ccc;
+  a
+    text-decoration: none
+    color: inherit
 
 /***************************************************
   ELEMENT STYLES
@@ -55,4 +59,9 @@ body
 @import pitch-pipe
 @import flash-cards
 
+/***************************************************
+  PSUEDO SELECTORS
+/***************************************************/
 
+.active
+  font-weight: bold

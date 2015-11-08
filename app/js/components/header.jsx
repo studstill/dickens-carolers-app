@@ -12,7 +12,6 @@ module.exports = React.createClass({
     return (
       <header className="nav">
         <Link to={'/pitch-pipe'}>Pitch Pipe</Link>
-        <Link to={'/random-song'}>Random Song</Link>
         <Link to={'/flash-cards'}>Flash Cards</Link>
       </header>
     );

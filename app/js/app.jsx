@@ -28,9 +28,8 @@ var App = React.createClass({
 
 var routes = (
   <Route name='home' path='/' handler={App}>
-    <DefaultRoute handler={RandomSong} />
+    <DefaultRoute handler={FlashCards} />
     <Route name="pitchPipe" path="/pitch-pipe" handler={PitchPipe} />
-    <Route name="randomSong" path="/random-song" handler={RandomSong} />
     <Route name="flashCards" path="/flash-cards" handler={FlashCards} />
     <NotFoundRoute handler={App} />
   </Route>
