@@ -54,8 +54,8 @@ module.exports = React.createClass({
               }
             </div>
           </div>
-          <button onClick={this.pickRandomSong}>New Song</button>
           <button onClick={this.rotateCard}>Pitch & Number</button>
+          <button onClick={this.pickRandomSong}>New Song</button>
         </div>
       </div>
     );
