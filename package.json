@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Dickens Carolers Rehearsal App",
   "main": "server.js",
-  "start": "node server.js",
+  "scripts": {
+    "start": "npm install; gulp; node server.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
