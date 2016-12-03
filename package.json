@@ -10,12 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3",
-    "react": "^0.13.3",
+    "react": "^0.14.8",
     "react-dom": "^0.14.0",
-    "superagent": "^1.4.0"
-  },
-  "devDependencies": {
     "body-parser": "^1.14.1",
+    "superagent": "^1.4.0",
     "browserify": "^12.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -25,5 +23,7 @@
     "reactify": "^1.1.1",
     "sassdoc": "^2.1.15",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
   }
 }

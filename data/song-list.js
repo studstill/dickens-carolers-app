@@ -223,7 +223,7 @@ module.exports = {
   },
   "56": {
     "key": "Eb",
-    "title": "I Hear the Bells"
+    "title": "I Heard the Bells"
   },
   "57": {
     "key": "F",
