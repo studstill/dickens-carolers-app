@@ -19,7 +19,7 @@ module.exports = {
       module.exports.fetchSongList.call(this);
     }
     var numberOfSongs = Object.keys(songList).length;
-    var randomSongNumber = Math.floor(Math.random() * numberOfSongs);
+    var randomSongNumber = Math.ceil(Math.random() * numberOfSongs);
     var randomSong = songList[randomSongNumber];
     this.setState({
       currentSongTitle: randomSong.title,

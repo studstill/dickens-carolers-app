@@ -133,40 +133,23 @@ var React = require('react');
 module.exports = React.createClass({displayName: "exports",
 
   getInitialState: function() {
+    // The pitch names correspond to the filenames stored on the server
+    var pitchList = ['e-natural-low','f-natural','f-sharp','g-natural','a-flat','a-natural','b-flat','b-natural','c-natural','c-sharp','d-natural','e-flat','e-natural-high'];
+    var pitchFiles = this.fetchPitches(pitchList);
+
     return {
-      pitchFiles: {},
-      pitchList: [
-        'e-natural-low',
-        'f-natural',
-        'f-sharp',
-        'g-natural',
-        'a-flat',
-        'a-natural',
-        'b-flat',
-        'b-natural',
-        'c-natural',
-        'c-sharp',
-        'd-natural',
-        'e-flat',
-        'e-natural-high'
-      ]
+      pitchFiles: pitchFiles,
+      pitchList: pitchList
     };
   },
 
-  fetchPitches: function() {
-    var pitchList = this.state.pitchList;
+  fetchPitches: function(pitchList) {
     var pitchFiles = {};
-
     pitchList.forEach(function(pitch) {
       pitchFiles[pitch] = new Audio('/file/' + pitch);
     });
 
-    this.setState({'pitchFiles': pitchFiles});
-  },
-
-
-  componentDidMount: function() {
-    this.fetchPitches();
+    return pitchFiles;
   },
 
   playPitch: function(pitch) {
@@ -291,7 +274,7 @@ module.exports = {
       module.exports.fetchSongList.call(this);
     }
     var numberOfSongs = Object.keys(songList).length;
-    var randomSongNumber = Math.floor(Math.random() * numberOfSongs);
+    var randomSongNumber = Math.ceil(Math.random() * numberOfSongs);
     var randomSong = songList[randomSongNumber];
     this.setState({
       currentSongTitle: randomSong.title,
