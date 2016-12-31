@@ -170,7 +170,6 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   playPitch: function(pitch) {
-    console.log(this.state)
     this.state.pitchFiles[pitch].play();
   },
 
