@@ -3,11 +3,45 @@ var React = require('react');
 // pitch-pipe component
 module.exports = React.createClass({
 
+  getInitialState: function() {
+    return {
+      pitchFiles: {},
+      pitchList: [
+        'e-natural-low',
+        'f-natural',
+        'f-sharp',
+        'g-natural',
+        'a-flat',
+        'a-natural',
+        'b-flat',
+        'b-natural',
+        'c-natural',
+        'c-sharp',
+        'd-natural',
+        'e-flat',
+        'e-natural-high'
+      ]
+    };
+  },
+
+  fetchPitches: function() {
+    var pitchList = this.state.pitchList;
+    var pitchFiles = {};
+
+    pitchList.forEach(function(pitch) {
+      pitchFiles[pitch] = new Audio('/file/' + pitch);
+    });
+
+    this.setState({'pitchFiles': pitchFiles});
+  },
+
+
+  componentDidMount: function() {
+    this.fetchPitches();
+  },
+
   playPitch: function(pitch) {
-    console.log(pitch);
-    // Do server GET request to /file/:pitch
-    var sound = new Audio('/file/' + pitch); // buffers automatically when created
-    sound.play();
+    this.state.pitchFiles[pitch].play();
   },
 
   render: function() {

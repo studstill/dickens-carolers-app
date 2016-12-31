@@ -56,15 +56,19 @@ button {
 /***************************************************/
 .main {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
@@ -72,14 +76,17 @@ button {
 .article, .songTrainer, .pitchPipe {
   margin: 0 auto;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 /***************************************************
@@ -103,14 +110,17 @@ header {
 
 .nav {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
 }
 
 .songTrainer {
@@ -119,22 +129,28 @@ header {
 
 .songTrainer .displayText {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
 }
 
 .songTrainer .btn {
@@ -144,18 +160,23 @@ header {
 
 .pitchPipe {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
@@ -163,20 +184,26 @@ header {
 .pitchRow {
   height: 150px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -184,8 +211,9 @@ header {
 @media (max-width: 1000px) {
   .pitchRow {
     height: 225px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
   }
 }
 
@@ -209,24 +237,30 @@ header {
 
 .flashCards {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 #f1_container {
   -webkit-box-flex: 0;
+  -webkit-flex: none;
       -ms-flex: none;
           flex: none;
   position: relative;
@@ -251,34 +285,43 @@ header {
   background-color: white;
   border: 5px solid grey;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
 }
 
 .face {
   height: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
@@ -292,16 +335,20 @@ header {
   text-align: center;
   background-color: #aaa;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
